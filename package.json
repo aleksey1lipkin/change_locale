@@ -1,0 +1,43 @@
+{
+  "name": "change_locale",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "aleksey1lipkin",
+  "license": "MIT",
+  "scripts": {
+    "start:popup": "parcel src/setup/popup/popup.html",
+    "build": "yarn build:popup && yarn build:content && yarn build:background",
+    "build:popup": "parcel build src/setup/popup/popup.html",
+    "build:content": "parcel build src/setup/content/index.js --out-file content.js",
+    "build:background": "parcel build src/setup/background/index.js --out-file background.js"
+  },
+  "dependencies": {
+    "svelte-spa-router": "1.3.0",
+    "wired-elements": "2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "6.1.0",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-svelte3": "2.7.3",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.2.1",
+    "parcel-plugin-svelte": "4.0.4",
+    "prettier": "1.18.2",
+    "prettier-plugin-svelte": "0.7.0",
+    "sass": "1.23.3",
+    "svelte": "3.12.1"
+  },
+  "alias": {
+    "src": "./src"
+  },
+  "staticFiles": {
+    "staticPath": [
+      "assets",
+      "src/setup/common"
+    ]
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ]
+}
