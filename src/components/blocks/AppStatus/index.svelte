@@ -1,5 +1,12 @@
+<style>
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
 <script>
-  import { WiredCheckbox } from 'wired-checkbox';
+  import { WiredToggle } from 'wired-toggle';
   import { strings } from './strings';
   import { createEventDispatcher } from 'svelte';
 
@@ -13,6 +20,7 @@
   };
 </script>
 
-<wired-checkbox checked="{checked}" on:change="{handleChange}"
-  >{strings.text}</wired-checkbox
->
+<div class="wrapper">
+  <wired-toggle checked="{checked}" on:change="{handleChange}" />
+  <span>{strings.text}</span>
+</div>

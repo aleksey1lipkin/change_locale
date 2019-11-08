@@ -1,3 +1,3 @@
 export const strings = {
-  text: 'redirect without notification',
+  text: 'always redirect',
 };

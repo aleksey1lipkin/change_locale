@@ -1,5 +1,7 @@
-<script></script>
+<script>
+  import RedirectRow from 'src/components/blocks/RedirectSettings/Row';
+</script>
 
 <style></style>
 
-<p>Settings page</p>
+<RedirectRow></RedirectRow>
