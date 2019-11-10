@@ -1,20 +1,24 @@
 <script>
+  import { WiredButton } from "wired-button";
   import { onDestroy } from 'svelte';
   import { get } from 'svelte/store';
   import RedirectRow from 'src/components/blocks/RedirectSettings/Row';
   import { redirectStore } from 'src/store';
-  import { WiredButton } from "wired-button";
+  import { saveInStore } from 'src/utils/chrome';
 
   let redirectStoreIds;
 
 	const unsubscribe = redirectStore.subscribe(store => {
-		redirectStoreIds = Object.keys(store);
+		redirectStoreIds = Object.keys(store || {});
 	});
 	onDestroy(unsubscribe);
 
   const onAddButtonClick = () => redirectStore.addNewConfig();
   const onSaveButtonClick = () => {
-    console.log('saving', get(redirectStore))
+    saveInStore({
+      storageName: 'redirectSettings',
+      storageValue: get(redirectStore)
+    });
   }
 </script>
 

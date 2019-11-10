@@ -1,12 +1,13 @@
 import { writable } from 'svelte/store';
-import { createUniqueId } from '../utils/common';
+import { createUniqueId } from 'src/utils/common';
 import { createDefaultRedirectConfig } from './config';
 
-const createRedirectStore = () => {
-  const { subscribe, update } = writable({});
+const createRedirectStore = (initialStore = {}) => {
+  const { subscribe, update, set } = writable(initialStore);
 
   return {
     subscribe,
+    setStore: newStore => set(newStore),
     addNewConfig: () =>
       update(store => ({
         ...store,

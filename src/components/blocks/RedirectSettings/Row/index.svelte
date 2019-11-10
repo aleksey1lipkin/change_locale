@@ -1,17 +1,22 @@
 <script>
-  import { onDestroy } from 'svelte';
-  import { WiredInput } from 'wired-input';
+  import { onDestroy, beforeUpdate } from 'svelte';
   import { WiredIconButton } from 'wired-icon-button';
   import { redirectStore } from 'src/store';
-  
+
   export let id;
-  let redirectConfig;
-  
+  let redirectFromValue = '';
+  let redirectToValue = '';
+
   const unsubscribe = redirectStore.subscribe(store => {
-    redirectConfig = store[id];
+    if (!store[id]) {
+      return;
+    }
+    const { from, to } = store[id];
+    redirectFromValue = from;
+    redirectToValue = to;
   });
   onDestroy(unsubscribe);
-  
+
   const onFromInputChange = event => {
     const value = event.target.value;
     redirectStore.updateConfig(id, value, 'from');
@@ -22,25 +27,27 @@
   };
   const onDeleteRow = () => {
     redirectStore.deleteConfig(id);
-  }
+  };
 </script>
-  
+
 <div class="wrapper">
-  <wired-input
-    on:input={onFromInputChange}
-    class='input'
-    placeholder='from'
-    value={redirectConfig.from}
+  <input
+    on:input="{onFromInputChange}"
+    class="input"
+    placeholder="from"
+    bind:value="{redirectFromValue}"
   />
-  <wired-input
-    on:change={onToInputChange}
-    class='input'
-    placeholder='to'
-    value={redirectConfig.to}
+  <input
+    on:change="{onToInputChange}"
+    class="input"
+    placeholder="to"
+    bind:value="{redirectToValue}"
   />
-  <wired-icon-button on:click={onDeleteRow} class="button">x</wired-icon-button>
+  <wired-icon-button on:click="{onDeleteRow}" class="button"
+    >x</wired-icon-button
+  >
 </div>
-    
+
 <style>
   .wrapper {
     display: flex;

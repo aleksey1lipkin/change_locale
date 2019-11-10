@@ -3,11 +3,11 @@
   import { WiredLink } from 'wired-link';
   import { strings } from './strings';
   import AppStatus from 'src/components/blocks/AppStatus';
-  import { saveInStore, getFromStore } from 'src/store';
+  import { saveInStore, getFromStore } from 'src/utils/chrome';
   
   let redirectWithoutNotify;
   onMount(async () => {
-      redirectWithoutNotify = await getFromStore(strings.settingName);
+    redirectWithoutNotify = await getFromStore(strings.settingName);
   })
     
   const onStatusChange = (event) => {
