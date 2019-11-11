@@ -2,9 +2,10 @@
   import { WiredButton } from "wired-button";
   import { onDestroy } from 'svelte';
   import { get } from 'svelte/store';
-  import RedirectRow from 'src/components/blocks/RedirectSettings/Row';
+  import RedirectRow from 'src/components/blocks/RedirectRow';
   import { redirectStore } from 'src/store';
-  import { saveInStore } from 'src/utils/chrome';
+  import { saveInChromeStore } from 'src/utils/chrome';
+  import { CHROME_STORE_KEYS } from 'src/utils/constants';
 
   let redirectStoreIds;
 
@@ -15,8 +16,8 @@
 
   const onAddButtonClick = () => redirectStore.addNewConfig();
   const onSaveButtonClick = () => {
-    saveInStore({
-      storageName: 'redirectSettings',
+    saveInChromeStore({
+      storageName: CHROME_STORE_KEYS.redirectSettings,
       storageValue: get(redirectStore)
     });
   }

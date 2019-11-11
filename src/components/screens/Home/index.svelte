@@ -3,15 +3,17 @@
   import { WiredLink } from 'wired-link';
   import { strings } from './strings';
   import AppStatus from 'src/components/blocks/AppStatus';
-  import { saveInStore, getFromStore } from 'src/utils/chrome';
+  import { saveInChromeStore, getFromChromeStore } from 'src/utils/chrome';
+  import { CHROME_STORE_KEYS } from 'src/utils/constants';
+
   
   let redirectWithoutNotify;
   onMount(async () => {
-    redirectWithoutNotify = await getFromStore(strings.settingName);
+    redirectWithoutNotify = await getFromChromeStore(CHROME_STORE_KEYS.redirectWithoutNotify);
   })
     
   const onStatusChange = (event) => {
-    saveInStore({
+    saveInChromeStore({
       storageName: strings.settingName,
       storageValue: event.detail.checked,
     });

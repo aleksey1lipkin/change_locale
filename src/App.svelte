@@ -5,10 +5,11 @@
   import Layout from 'src/components/blocks/Layout';
   import { routes } from 'src/routes';
   import { redirectStore } from 'src/store';
-  import { getFromStore } from 'src/utils/chrome';
+  import { getFromChromeStore } from 'src/utils/chrome';
+  import { CHROME_STORE_KEYS } from 'src/utils/constants';
 
   onMount(async () => {
-    const config = await getFromStore('redirectSettings');
+    const config = await getFromChromeStore(CHROME_STORE_KEYS.redirectSettings);
     redirectStore.setStore(config);
   });
 </script>

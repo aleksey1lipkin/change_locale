@@ -1,4 +1,4 @@
-export const saveInStore = ({ storageName, storageValue }) =>
+export const saveInChromeStore = ({ storageName, storageValue }) =>
   new Promise((resolve, reject) => {
     chrome.storage.sync.set({ [storageName]: storageValue }, () => {
       if (chrome.runtime.lastError) {
@@ -8,7 +8,7 @@ export const saveInStore = ({ storageName, storageValue }) =>
     });
   });
 
-export const getFromStore = storageName =>
+export const getFromChromeStore = storageName =>
   new Promise((resolve, reject) => {
     chrome.storage.sync.get(storageName, response => {
       if (chrome.runtime.lastError) {
