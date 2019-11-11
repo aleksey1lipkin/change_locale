@@ -1,10 +1,3 @@
-<style>
-  .wrapper {
-    display: flex;
-    align-items: center;
-  }
-</style>
-
 <script>
   import { WiredToggle } from 'wired-toggle';
   import { strings } from './strings';
@@ -22,5 +15,15 @@
 
 <div class="wrapper">
   <wired-toggle checked="{checked}" on:change="{handleChange}" />
-  <span>{strings.text}</span>
+  <span class="text">{strings.text}</span>
 </div>
+
+<style>
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .text {
+    margin-left: 8px;
+  }
+</style>
