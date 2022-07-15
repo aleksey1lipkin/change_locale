@@ -26,7 +26,7 @@
     "prettier": "1.18.2",
     "prettier-plugin-svelte": "0.7.0",
     "sass": "1.23.3",
-    "svelte": "3.12.1"
+    "svelte": "3.49.0"
   },
   "alias": {
     "src": "./src"
