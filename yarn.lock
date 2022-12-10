@@ -4472,9 +4472,9 @@ q@^1.1.2:
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 querystring-es3@^0.2.0:
   version "0.2.1"
@@ -5243,7 +5243,7 @@ svelte-dev-helper@^1.1.7:
   resolved "https://registry.yarnpkg.com/svelte-dev-helper/-/svelte-dev-helper-1.1.9.tgz#7d187db5c6cdbbd64d75a32f91b8998bde3273c3"
   integrity sha1-fRh9tcbNu9ZNdaMvkbiZi94yc8M=
 
-svelte-spa-router@^1.3.0:
+svelte-spa-router@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/svelte-spa-router/-/svelte-spa-router-1.3.0.tgz#2461b43c7ee9b8b2b5c74fbb363d4bc2c3eb7dc8"
   integrity sha512-DyIU8EB60hwsQ1jr7qOLOK3E5g3DrkkIjg+Kd+V4VNq4yl4MaVBt+/jUqmy0EzhOx9bpggqfDZCp3QxS/Qbp+Q==
